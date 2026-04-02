@@ -43,7 +43,7 @@
     .whatsapp-fixed{
       position:fixed;bottom:25px;right:25px;background:var(--magenta);color:white;
       width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-      font-size:2.8rem;box-shadow:999;box-shadow:0 0 40px var(--magenta);animation:pulse-cyan 2s infinite;
+      font-size:2.8rem;box-shadow:0 0 40px var(--magenta);animation:pulse-cyan 2s infinite;
     }
 
     .hero{
@@ -73,6 +73,71 @@
       box-shadow:0 0 60px var(--cyan), 0 0 100px var(--magenta);
     }
     .btn-hero.whatsapp{background:var(--magenta);border-color:var(--magenta);color:#000;}
+
+    /* ==================== SECCIÓN SERVICIOS (Adaptada a estilo Cyber) ==================== */
+    .services{
+      padding:100px 5% 120px;
+      background:linear-gradient(135deg, #0a0a0a, #1a0033);
+      position:relative;
+      overflow:hidden;
+    }
+    .services::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:4px;
+      background:linear-gradient(90deg,transparent,var(--cyan),var(--magenta),var(--cyan),transparent);
+    }
+    .section-title{
+      text-align:center;margin-bottom:70px;
+    }
+    .section-title h2{
+      font-size:clamp(2.8rem,8vw,4.5rem);font-weight:900;
+      background:linear-gradient(90deg,var(--cyan),var(--magenta),var(--violet));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      text-shadow:0 0 40px var(--cyan);
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      gap:25px;
+      max-width:1400px;
+      margin:0 auto;
+    }
+    .service-card{
+      background:rgba(20,20,40,0.6);
+      border:2px solid rgba(0,255,255,0.2);
+      border-radius:15px;
+      padding:35px 25px;
+      transition:all 0.4s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .service-card::before{
+      content:'';position:absolute;top:-50%;left:-50%;width:60%;height:60%;
+      background:radial-gradient(circle, rgba(0,255,255,0.15) 0%, transparent 70%);
+      opacity:0;transition:all 0.5s;
+    }
+    .service-card:hover{
+      transform:translateY(-15px);
+      border-color:var(--cyan);
+      box-shadow:0 0 40px var(--cyan);
+    }
+    .service-card:hover::before{opacity:1;top:-20%;left:-20%;}
+
+    .service-card h3{
+      font-size:1.55rem;margin-bottom:15px;color:var(--cyan);
+      text-shadow:0 0 15px var(--cyan);
+    }
+    .service-card p{
+      color:#ccc;line-height:1.6;font-size:1.05rem;
+    }
+    .service-card .ver-mas{
+      display:inline-block;margin-top:20px;
+      color:var(--lime);font-weight:bold;text-decoration:none;
+      transition:0.3s;
+    }
+    .service-card .ver-mas:hover{
+      color:var(--magenta);text-shadow:0 0 15px var(--magenta);
+    }
 
     #particles-js{position:absolute;width:100%;height:100%;top:0;left:0;z-index:1;}
     .scanline{
@@ -106,6 +171,7 @@
       nav.active{display:flex;}
       nav a{font-size:1.6rem;margin:15px 0;}
       .hero h1{letter-spacing:6px;}
+      .services{padding:80px 5% 90px;}
     }
   </style>
 </head>
@@ -123,6 +189,7 @@
     </div>
     <nav>
       <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
       <a href="#acceso">Servicios</a>
       <a href="#cyber">Clientes</a>
       <a href="#drop">Tienda</a>
@@ -138,8 +205,84 @@
       <h1>RECARGA</h1>
       <p><br></p>
       <div class="hero-buttons">
-        <a href="#acceso" class="btn-hero">Mas informacion!</a>
-        <a href="https://wa.me/5573189411374" target="_blank" class="btn-hero whatsapp">Whatsapp directo</a>
+        <a href="#servicios" class="btn-hero">Ver Servicios</a>
+        <a href="https://wa.me/573189411374" target="_blank" class="btn-hero whatsapp">Whatsapp directo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECCIÓN DE SERVICIOS (Cyber Style) ==================== -->
+  <section class="services" id="servicios">
+    <div class="section-title">
+      <h2>Nuestros Servicios</h2>
+      <p style="color:#aaa;margin-top:15px;font-size:1.3rem;">Recarga • Mantenimiento • Inspección • Protocolos de supervivencia</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Recarga En Linea</h3>
+        <p>Recarga completa de extintores de polvo químico seco, CO₂, agua, espuma y halon. Cumplimos con normas técnicas vigentes.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Mantenimiento Preventivo</h3>
+        <p>Revisión periódica, limpieza, cambio de válvulas, mangueras y sellos para garantizar el correcto funcionamiento.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Inspección y Certificación</h3>
+        <p>Inspección visual y funcional según normas NTC e internacionales. Entregamos certificado de inspección.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Prueba Hidrostática</h3>
+        <p>Prueba hidrostática obligatoria para cilindros de extintores con registro y certificación oficial.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Mantenimiento a Domicilio / Empresa</h3>
+        <p>Servicio de recarga y mantenimiento en sitio para industrias, edificios, oficinas y hogares.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Recarga de Extintores Móviles</h3>
+        <p>Atención inmediata con unidad móvil para recargas de emergencia en tu empresa o proyecto.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Capacitación en Uso de Extintores</h3>
+        <p>Entrenamiento teórico-práctico para el correcto uso de extintores y planes de emergencia.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Venta de Extintores Nuevos</h3>
+        <p>Extintores de todas las capacidades y tipos: ABC, BC, CO₂, agua, espuma y especiales.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Suministro de Refacciones</h3>
+        <p>Válvulas, mangueras, indicadores de presión, sellos de seguridad y accesorios originales.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Plan Anual de Mantenimiento</h3>
+        <p>Contrato de mantenimiento preventivo anual con visitas programadas y reporte técnico.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Extintores Especiales</h3>
+        <p>Recarga y mantenimiento de extintores para cocina (Clase K), vehículos, barcos y ambientes corrosivos.</p>
+        <a href="#" class="ver-mas">→ Acceder</a>
       </div>
     </div>
   </section>
